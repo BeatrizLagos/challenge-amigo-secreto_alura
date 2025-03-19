@@ -43,3 +43,26 @@ const agregarAmigo = () => {
 
   mostrarAmigos();
 };
+
+// Funciones para el sorteo de amigo secreto
+
+const mostrarAmigoSecreto = (nombre) => {
+  const listaAmigos = document.getElementById("listaAmigos");
+  listaAmigos.style.display = "none";
+
+  const elementoDeResultado = document.getElementById("resultado");
+  elementoDeResultado.style.padding = "40px 0px";
+  elementoDeResultado.innerHTML = "El amigo sorteado es: " + nombre + '<br/>';
+}
+
+const sortearAmigo = () => {
+  if (amigos.length === 0) {
+    alert("No hay amigos para sortear");
+    return;
+  }
+
+  const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+  const amigoSorteado = amigos[indiceAleatorio];
+
+  mostrarAmigoSecreto(amigoSorteado);
+};
