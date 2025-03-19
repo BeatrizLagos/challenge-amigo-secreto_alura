@@ -11,6 +11,22 @@ const validarNombre = (nombre) => {
   return true;
 };
 
+const mostrarAmigos = () => {
+  const elementoDeLista = document.getElementById("listaAmigos");
+
+  elementoDeLista.innerHTML = "";
+  let contenidoDeLista = "";
+
+  for (let i = 0; i < amigos.length; i++) {
+    const amigo = amigos[i];
+
+    const elementoDeAmigo = '<li>' + amigo + "</li>";
+    contenidoDeLista += elementoDeAmigo;
+  }
+
+  elementoDeLista.innerHTML = contenidoDeLista;
+};
+
 const agregarAmigo = () => {
   const inputDelNombre = document.getElementById("amigo");
   const nombre = inputDelNombre.value;
@@ -25,5 +41,5 @@ const agregarAmigo = () => {
 
   inputDelNombre.value = "";
 
-  console.log(amigos);
+  mostrarAmigos();
 };
