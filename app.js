@@ -52,7 +52,15 @@ const mostrarAmigoSecreto = (nombre) => {
 
   const elementoDeResultado = document.getElementById("resultado");
   elementoDeResultado.style.padding = "40px 0px";
-  elementoDeResultado.innerHTML = "El amigo sorteado es: " + nombre + '<br/>';
+  elementoDeResultado.innerHTML = "El amigo sorteado es: " + nombre + "<br/>";
+};
+
+const cambiarBoton = () => {
+  const botonSortear = document.getElementById("sortear");
+  botonSortear.classList.add("hidden");
+
+  const botonReiniciar = document.getElementById("reiniciar");
+  botonReiniciar.classList.remove("hidden");
 }
 
 const sortearAmigo = () => {
@@ -65,4 +73,9 @@ const sortearAmigo = () => {
   const amigoSorteado = amigos[indiceAleatorio];
 
   mostrarAmigoSecreto(amigoSorteado);
+  cambiarBoton();
+};
+
+const recargarPagina = () => {
+  location.reload();
 };
